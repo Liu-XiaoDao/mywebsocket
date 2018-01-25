@@ -3,6 +3,7 @@
     connected: function() {},
     disconnected: function() {},
     received: function(data) {
+      console.log(data['message']);
       return $('#messages').append(data['message']);
     },
     speak: function(message) {
