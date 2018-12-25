@@ -1,7 +1,11 @@
 (function() {
   App.room = App.cable.subscriptions.create("RoomChannel", {
-    connected: function() {},
-    disconnected: function() {},
+    connected: function() {
+      alert('socket已經鏈接');
+    },
+    disconnected: function() {
+      alert('socket鏈接斷開');
+    },
     received: function(data) {
       console.log(data['message']);
       return $('#messages').append(data['message']);
